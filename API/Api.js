@@ -1,4 +1,3 @@
-// Api.js
 import express from 'express';
 import { YourConnectorClass } from "../DataBase/Connector.js";
 
