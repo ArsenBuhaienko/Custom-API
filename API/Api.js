@@ -54,6 +54,16 @@ app.post('/tobaccoBrandsCreateNew', async (req, res) => {
   }
 });
 
+app.delete('/tobaccoBrandsDelete', async (req, res) => {
+  try {
+      const rows = await connector.tobaccoBrandsDelete();
+      res.json(rows);
+  } catch (error) {
+      console.error('Error in API:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });

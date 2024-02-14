@@ -83,6 +83,19 @@ import mysql from 'mysql2';
             //await this.disconnect();
         }
     }
+
+    async tobaccoBrandsDelete() {
+        try {
+            await this.connect();
+            const [rows] = await this.connection.promise().query("DELETE FROM hookah_time.tobacco_manufacturer WHERE id = '57';");
+            return rows;  
+        } catch (error) {
+            console.error('Error:', error);
+            throw error;
+        } finally {
+            //await this.disconnect();
+        }
+    }
     
 }
 
