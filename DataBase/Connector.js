@@ -70,6 +70,19 @@ import mysql from 'mysql2';
             //await this.disconnect();
         }
     }
+
+    async tobaccoBrandsCreateNew() {
+        try {
+            await this.connect();
+            const [rows] = await this.connection.promise().query("INSERT INTO hookah_time.tobacco_manufacturer (name) VALUES ('Северный');");
+            return rows;  
+        } catch (error) {
+            console.error('Error:', error);
+            throw error;
+        } finally {
+            //await this.disconnect();
+        }
+    }
     
 }
 
